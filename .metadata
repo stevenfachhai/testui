@@ -12,7 +12,7 @@ project_type: app
 # Tracks metadata for the flutter migrate command
 migration:
   platforms:
-    - platform: root
+    - platform: home
       create_revision: 761747bfc538b5af34aa0d3fac380f1bc331ec49
       base_revision: 761747bfc538b5af34aa0d3fac380f1bc331ec49
     - platform: android

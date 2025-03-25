@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:test_ui/common/helper/is_dark_mode.dart';
-import 'package:test_ui/common/widgets/appbar/app_bar.dart';
-import 'package:test_ui/common/widgets/button/basic_app_button.dart';
-import 'package:test_ui/core/configs/assets/app_vectors.dart';
-import 'package:test_ui/core/configs/theme/app_colors.dart';
+import 'package:ohkarao/common/helper/is_dark_mode.dart';
+import 'package:ohkarao/common/widgets/appbar/app_bar.dart';
+import 'package:ohkarao/common/widgets/button/basic_app_button.dart';
+import 'package:ohkarao/core/configs/assets/app_vectors.dart';
+import 'package:ohkarao/core/configs/theme/app_colors.dart';
+import 'package:ohkarao/presentation/auth/pages/signin.dart';
+import 'package:ohkarao/presentation/auth/pages/singnup.dart';
 
 class SignupOrSigninPage extends StatelessWidget {
   const SignupOrSigninPage({super.key});
@@ -48,8 +50,15 @@ class SignupOrSigninPage extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 1,
-                        child:
-                            BasicAppButton(onPressed: () {}, title: 'Register'),
+                        child: BasicAppButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          SignupPage()));
+                            },
+                            title: 'Register'),
                       ),
                       const SizedBox(
                         width: 20,
@@ -57,7 +66,13 @@ class SignupOrSigninPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          SigninPage()));
+                            },
                             child: Text(
                               'Sign in',
                               style: TextStyle(

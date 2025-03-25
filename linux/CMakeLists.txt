@@ -4,10 +4,10 @@ project(runner LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "test_ui")
+set(BINARY_NAME "ohkarao")
 # The unique GTK application identifier for this application. See:
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
-set(APPLICATION_ID "com.example.test_ui")
+set(APPLICATION_ID "com.example.ohkarao")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.
@@ -16,14 +16,14 @@ cmake_policy(SET CMP0063 NEW)
 # Load bundled libraries from the lib/ directory relative to the binary.
 set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
 
-# Root filesystem for cross-building.
-if(FLUTTER_TARGET_PLATFORM_SYSROOT)
-  set(CMAKE_SYSROOT ${FLUTTER_TARGET_PLATFORM_SYSROOT})
-  set(CMAKE_FIND_ROOT_PATH ${CMAKE_SYSROOT})
-  set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
-  set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
-  set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-  set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+# home filesystem for cross-building.
+if(FLUTTER_TARGET_PLATFORM_SYShome)
+  set(CMAKE_SYShome ${FLUTTER_TARGET_PLATFORM_SYShome})
+  set(CMAKE_FIND_home_PATH ${CMAKE_SYShome})
+  set(CMAKE_FIND_home_PATH_MODE_PROGRAM NEVER)
+  set(CMAKE_FIND_home_PATH_MODE_PACKAGE ONLY)
+  set(CMAKE_FIND_home_PATH_MODE_LIBRARY ONLY)
+  set(CMAKE_FIND_home_PATH_MODE_INCLUDE ONLY)
 endif()
 
 # Define build configuration options.

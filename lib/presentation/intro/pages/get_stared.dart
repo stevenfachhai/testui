@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_ui/common/widgets/button/basic_app_button.dart';
-import 'package:test_ui/core/configs/assets/app_images.dart';
-import 'package:test_ui/core/configs/assets/app_vectors.dart';
-import 'package:test_ui/core/configs/theme/app_colors.dart';
-import 'package:test_ui/presentation/choose_mode/pages/choose_mode.dart';
+import 'package:ohkarao/common/widgets/button/basic_app_button.dart';
+import 'package:ohkarao/core/configs/assets/app_images.dart';
+import 'package:ohkarao/core/configs/assets/app_vectors.dart';
+import 'package:ohkarao/core/configs/theme/app_colors.dart';
+import 'package:ohkarao/presentation/choose_mode/pages/choose_mode.dart';
 
 class GetStaredPage extends StatelessWidget {
   const GetStaredPage({super.key});

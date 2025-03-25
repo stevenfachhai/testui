@@ -8,7 +8,7 @@ include(${EPHEMERAL_DIR}/generated_config.cmake)
 
 # TODO: Move the rest of this into files in ephemeral. See
 # https://github.com/flutter/flutter/issues/57146.
-set(WRAPPER_ROOT "${EPHEMERAL_DIR}/cpp_client_wrapper")
+set(WRAPPER_home "${EPHEMERAL_DIR}/cpp_client_wrapper")
 
 # Set fallback configurations for older versions of the flutter tool.
 if (NOT DEFINED FLUTTER_TARGET_PLATFORM)
@@ -44,16 +44,16 @@ list(APPEND CPP_WRAPPER_SOURCES_CORE
   "core_implementations.cc"
   "standard_codec.cc"
 )
-list(TRANSFORM CPP_WRAPPER_SOURCES_CORE PREPEND "${WRAPPER_ROOT}/")
+list(TRANSFORM CPP_WRAPPER_SOURCES_CORE PREPEND "${WRAPPER_home}/")
 list(APPEND CPP_WRAPPER_SOURCES_PLUGIN
   "plugin_registrar.cc"
 )
-list(TRANSFORM CPP_WRAPPER_SOURCES_PLUGIN PREPEND "${WRAPPER_ROOT}/")
+list(TRANSFORM CPP_WRAPPER_SOURCES_PLUGIN PREPEND "${WRAPPER_home}/")
 list(APPEND CPP_WRAPPER_SOURCES_APP
   "flutter_engine.cc"
   "flutter_view_controller.cc"
 )
-list(TRANSFORM CPP_WRAPPER_SOURCES_APP PREPEND "${WRAPPER_ROOT}/")
+list(TRANSFORM CPP_WRAPPER_SOURCES_APP PREPEND "${WRAPPER_home}/")
 
 # Wrapper sources needed for a plugin.
 add_library(flutter_wrapper_plugin STATIC
@@ -67,7 +67,7 @@ set_target_properties(flutter_wrapper_plugin PROPERTIES
   CXX_VISIBILITY_PRESET hidden)
 target_link_libraries(flutter_wrapper_plugin PUBLIC flutter)
 target_include_directories(flutter_wrapper_plugin PUBLIC
-  "${WRAPPER_ROOT}/include"
+  "${WRAPPER_home}/include"
 )
 add_dependencies(flutter_wrapper_plugin flutter_assemble)
 
@@ -79,7 +79,7 @@ add_library(flutter_wrapper_app STATIC
 apply_standard_settings(flutter_wrapper_app)
 target_link_libraries(flutter_wrapper_app PUBLIC flutter)
 target_include_directories(flutter_wrapper_app PUBLIC
-  "${WRAPPER_ROOT}/include"
+  "${WRAPPER_home}/include"
 )
 add_dependencies(flutter_wrapper_app flutter_assemble)
 
@@ -96,7 +96,7 @@ add_custom_command(
     ${PHONY_OUTPUT}
   COMMAND ${CMAKE_COMMAND} -E env
     ${FLUTTER_TOOL_ENVIRONMENT}
-    "${FLUTTER_ROOT}/packages/flutter_tools/bin/tool_backend.bat"
+    "${FLUTTER_home}/packages/flutter_tools/bin/tool_backend.bat"
       ${FLUTTER_TARGET_PLATFORM} $<CONFIG>
   VERBATIM
 )

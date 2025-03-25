@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_ui/core/configs/assets/app_vectors.dart';
-import 'package:test_ui/presentation/intro/pages/get_stared.dart';
+import 'package:ohkarao/core/configs/assets/app_vectors.dart';
+import 'package:ohkarao/presentation/intro/pages/get_stared.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

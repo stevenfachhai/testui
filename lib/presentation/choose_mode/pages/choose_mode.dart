@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_ui/common/widgets/button/basic_app_button.dart';
-import 'package:test_ui/core/configs/assets/app_vectors.dart';
-import 'package:test_ui/core/configs/theme/app_colors.dart';
-import 'package:test_ui/presentation/auth/pages/signup_or_signin.dart';
-import 'package:test_ui/presentation/choose_mode/bloc/theme_cubit.dart';
+import 'package:ohkarao/common/widgets/button/basic_app_button.dart';
+import 'package:ohkarao/core/configs/assets/app_vectors.dart';
+import 'package:ohkarao/core/configs/theme/app_colors.dart';
+import 'package:ohkarao/presentation/auth/pages/signup_or_signin.dart';
+import 'package:ohkarao/presentation/choose_mode/bloc/theme_cubit.dart';
 
 import '../../../core/configs/assets/app_images.dart';
 
